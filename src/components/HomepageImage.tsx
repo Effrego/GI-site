@@ -2,15 +2,14 @@ import Image from "next/image";
 
 export default function HomepageImage() {
   return (
-    <section className="px-6 py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl">
-        <div className="relative h-64 w-full overflow-hidden rounded-2xl sm:h-80">
+    <section className="px-6 pb-16 md:px-10">
+      <div className="mx-auto max-w-[1400px] rounded-xl border border-neutral-800 p-1.5">
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg md:aspect-[37/10]">
           <Image
             src="/images/home_page.webp"
-            alt="Workspace"
+            alt="Рабочее пространство сценариста"
             fill
             className="object-cover"
-            priority
           />
         </div>
       </div>

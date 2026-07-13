@@ -3,62 +3,57 @@ import Image from "next/image";
 
 const directions = [
   {
-    kicker: "Разработка сценариев",
     title: "GI Screenwriting",
-    description:
-      "Авторская комната по созданию оригинальных сценариев для полнометражных фильмов, сериалов и театральных постановок.",
     href: "/screenwriting",
-    image: "/images/Screenwriting_icon.png",
+    icon: "/images/Screenwriting_icon.png",
+    lead: "Разработка сценариев.",
+    text: " Авторская комната по созданию оригинальных сценариев для полнометражных фильмов, сериалов и театральных постановок.",
   },
   {
-    kicker: "«Лечение» сценариев",
     title: "GI Doctoring",
-    description:
-      "Анализ, рекомендации, доработка или переработка сценария с помощью консультаций или редактуры от опытного сценариста.",
     href: "/doctoring",
-    image: "/images/Doctoring_icon.png",
+    icon: "/images/Doctoring_icon.png",
+    lead: "«Лечение» сценариев.",
+    text: " Анализ, рекомендации, доработка или переработка сценария с помощью консультаций или редактуры от опытного сценариста.",
   },
   {
-    kicker: "Сценарный курс",
-    title: "GI Courses",
-    description:
-      "Специальная методика для начинающих и действующих авторов, направленная на последовательное освоение практических навыков сценарного мастерства.",
+    title: "GI courses",
     href: "/courses",
-    image: "/images/Courses_icon.png",
+    icon: "/images/Courses_icon.png",
+    lead: "Сценарный курс.",
+    text: " Специальная методика, для начинающих и действующих авторов направленная на последовательное освоение практических навыков сценарного мастерства.",
   },
 ];
 
 export default function Directions() {
   return (
-    <section className="border-t border-neutral-800 px-6 py-20 sm:py-28">
-      <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-3">
-        {directions.map((direction) => (
-          <Link
-            key={direction.href}
-            href={direction.href}
-            className="group flex flex-col rounded-lg border border-neutral-800 p-6 transition-colors hover:border-neutral-600"
-          >
-            <div className="relative h-48 w-full">
+    <section className="px-6 py-14 md:px-10 md:py-20">
+      <div className="mx-auto grid max-w-[1400px] gap-x-12 gap-y-10 md:grid-cols-3">
+        {directions.map((d) => (
+          <div key={d.href} className="flex flex-col items-center">
+            <Link
+              href={d.href}
+              className="group flex flex-col items-center"
+            >
               <Image
-                src={direction.image}
-                alt={direction.title}
-                fill
-                className="object-contain"
+                src={d.icon}
+                alt={d.title}
+                width={90}
+                height={90}
+                className="h-16 w-auto"
               />
+              <h3 className="mt-5 font-display text-2xl text-neutral-200 underline decoration-neutral-500 decoration-1 underline-offset-[6px] transition-colors group-hover:text-white group-hover:decoration-neutral-300">
+                {d.title}
+              </h3>
+            </Link>
+
+            <div className="mt-6 w-full rounded-md bg-card px-6 py-5">
+              <p className="text-[15px] leading-relaxed text-neutral-400">
+                <span className="text-accent">{d.lead}</span>
+                {d.text}
+              </p>
             </div>
-            <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
-              {direction.kicker}
-            </p>
-            <h3 className="mt-2 text-xl font-semibold text-neutral-100">
-              {direction.title}
-            </h3>
-            <p className="mt-3 flex-1 text-sm text-neutral-400">
-              {direction.description}
-            </p>
-            <span className="mt-6 text-sm font-medium text-neutral-300 transition-colors group-hover:text-neutral-100">
-              Подробнее →
-            </span>
-          </Link>
+          </div>
         ))}
       </div>
     </section>

@@ -1,37 +1,33 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-[calc(100vh-4rem)] flex-col justify-center border-b border-neutral-800 px-6">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 py-16 md:grid-cols-2 md:items-center md:gap-16 md:py-0">
-        <div>
-          <h1 className="text-4xl font-semibold tracking-tight text-neutral-100 sm:text-5xl md:text-6xl">
-            Guiding Idea
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-neutral-400">
-            Авторская студия историй — разработка сценариев, докторинг и обучение
-            сценарному мастерству.
-          </p>
-          <div className="mt-10">
-            <Link
-              href="/contacts"
-              className="inline-flex items-center justify-center rounded-full bg-neutral-100 px-6 py-3 text-sm font-medium tracking-wide text-neutral-950 transition-colors hover:bg-neutral-300"
-            >
-              Связаться
-            </Link>
-          </div>
-        </div>
+    <section className="relative">
+      {/* Textured background band pinned to the top */}
+      <div className="absolute inset-x-0 top-0 h-[130px] overflow-hidden md:h-[170px]">
+        <Image
+          src="/images/Header_background.webp"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
-        <div className="flex items-center justify-center">
-          <Image
-            src="/images/GI_logo.png"
-            alt="Guiding Idea"
-            width={300}
-            height={300}
-            className="w-full max-w-xs"
-          />
-        </div>
+      {/* Logo + title sitting above the band */}
+      <div className="relative z-10 flex flex-col items-center px-6 pt-[80px] md:pt-[100px]">
+        <Image
+          src="/images/GI_logo.png"
+          alt="Guiding Idea"
+          width={160}
+          height={160}
+          className="w-[100px] md:w-[115px]"
+          priority
+        />
+        <h1 className="mt-5 font-display text-[2.5rem] font-medium tracking-wide text-neutral-100 md:text-5xl">
+          Guiding Idea
+        </h1>
+        <div className="mt-8 w-full max-w-[1400px] border-t border-neutral-700/50" />
       </div>
     </section>
   );
