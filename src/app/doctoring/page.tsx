@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import Doctoring from "@/components/Doctoring";
 
 export const metadata: Metadata = {
@@ -8,5 +9,15 @@ export const metadata: Metadata = {
 };
 
 export default function DoctoringPage() {
-  return <Doctoring />;
+  return (
+    <>
+      <Breadcrumb
+        items={[
+          { label: "Главная", href: "/" },
+          { label: "GI Doctoring" },
+        ]}
+      />
+      <Doctoring />
+    </>
+  );
 }

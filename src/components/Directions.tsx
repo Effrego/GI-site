@@ -8,7 +8,7 @@ const directions = [
     description:
       "Авторская комната по созданию оригинальных сценариев для полнометражных фильмов, сериалов и театральных постановок.",
     href: "/screenwriting",
-    image: "/images/Octo-screenwriting.png",
+    image: "/images/Screenwriting_icon.png",
   },
   {
     kicker: "«Лечение» сценариев",
@@ -16,7 +16,7 @@ const directions = [
     description:
       "Анализ, рекомендации, доработка или переработка сценария с помощью консультаций или редактуры от опытного сценариста.",
     href: "/doctoring",
-    image: "/images/Octo-doctoring.png",
+    image: "/images/Doctoring_icon.png",
   },
   {
     kicker: "Сценарный курс",
@@ -24,7 +24,7 @@ const directions = [
     description:
       "Специальная методика для начинающих и действующих авторов, направленная на последовательное освоение практических навыков сценарного мастерства.",
     href: "/courses",
-    image: "/images/Octo_courses.webp",
+    image: "/images/Courses_icon.png",
   },
 ];
 

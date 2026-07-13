@@ -1,11 +1,23 @@
-import ImagePlaceholder from "./ImagePlaceholder";
-import StubButton from "./StubButton";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Screenwriting() {
   return (
     <section className="px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl">
+        {/* Main content - 2 columns */}
         <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
+          {/* Left: Illustration */}
+          <div className="relative h-96 w-full overflow-hidden rounded-lg md:sticky md:top-24">
+            <Image
+              src="/images/Octo-screenwriting.png"
+              alt="Screenwriting octopus"
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Right: Content */}
           <div>
             <p className="text-sm uppercase tracking-widest text-neutral-500">
               Разработка сценариев
@@ -34,10 +46,9 @@ export default function Screenwriting() {
               </p>
             </div>
           </div>
-
-          <ImagePlaceholder ratio="video" label="Изображение" className="md:mt-20" />
         </div>
 
+        {/* Collaboration sections */}
         <div className="mt-16 grid gap-8 border-t border-neutral-800 pt-16 md:grid-cols-2 md:gap-16">
           <div>
             <h3 className="text-lg font-medium text-neutral-100">
@@ -50,8 +61,18 @@ export default function Screenwriting() {
               концепцией, командой и структурой работы.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <StubButton variant="solid">Запросить КП</StubButton>
-              <StubButton variant="outline">Связаться по телефону</StubButton>
+              <Link
+                href="/contacts"
+                className="inline-block rounded-full border border-neutral-300 px-6 py-2 text-sm font-medium text-neutral-100 transition-colors hover:border-neutral-100"
+              >
+                Запросить КП
+              </Link>
+              <Link
+                href="/contacts"
+                className="inline-block rounded-full border border-neutral-700 px-6 py-2 text-sm font-medium text-neutral-400 transition-colors hover:border-neutral-500 hover:text-neutral-300"
+              >
+                Связаться по телефону
+              </Link>
             </div>
           </div>
 
@@ -66,7 +87,12 @@ export default function Screenwriting() {
               интересам и сильным сторонам.
             </p>
             <div className="mt-6">
-              <StubButton variant="solid">Подать заявку в авторский пул</StubButton>
+              <Link
+                href="/contacts"
+                className="inline-block rounded-full border border-neutral-300 px-6 py-2 text-sm font-medium text-neutral-100 transition-colors hover:border-neutral-100"
+              >
+                Подать заявку в авторский пул
+              </Link>
             </div>
           </div>
         </div>

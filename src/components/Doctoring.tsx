@@ -1,5 +1,5 @@
-import ImagePlaceholder from "./ImagePlaceholder";
-import StubButton from "./StubButton";
+import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -48,7 +48,19 @@ export default function Doctoring() {
   return (
     <section className="px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl">
+        {/* Main content - 2 columns */}
         <div className="grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
+          {/* Left: Illustration */}
+          <div className="relative h-96 w-full overflow-hidden rounded-lg md:sticky md:top-24">
+            <Image
+              src="/images/Octo-doctoring.png"
+              alt="Doctoring octopus"
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Right: Content */}
           <div>
             <p className="text-sm uppercase tracking-widest text-neutral-500">
               «Лечение» сценариев
@@ -63,17 +75,15 @@ export default function Doctoring() {
               написанного материала — мы поддержим вас на любом этапе.
             </p>
           </div>
-
-          <ImagePlaceholder ratio="video" label="Изображение" />
         </div>
 
+        {/* Services grid */}
         <div className="mt-16 grid gap-6 border-t border-neutral-800 pt-16 sm:grid-cols-2">
           {services.map((service) => (
             <div
               key={service.title}
               className="flex flex-col gap-4 rounded-lg border border-neutral-800 p-6"
             >
-              <ImagePlaceholder ratio="square" label="Иконка" className="w-12" />
               <h3 className="text-lg font-medium text-neutral-100">
                 {service.title}
               </h3>
@@ -96,8 +106,18 @@ export default function Doctoring() {
         </div>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <StubButton variant="solid">Запросить прайс-лист</StubButton>
-          <StubButton variant="outline">Связаться по телефону</StubButton>
+          <Link
+            href="/contacts"
+            className="inline-block rounded-full border border-neutral-300 px-6 py-2 text-sm font-medium text-neutral-100 transition-colors hover:border-neutral-100"
+          >
+            Запросить прайс-лист
+          </Link>
+          <Link
+            href="/contacts"
+            className="inline-block rounded-full border border-neutral-700 px-6 py-2 text-sm font-medium text-neutral-400 transition-colors hover:border-neutral-500 hover:text-neutral-300"
+          >
+            Связаться по телефону
+          </Link>
         </div>
       </div>
     </section>

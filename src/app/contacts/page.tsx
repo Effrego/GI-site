@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Breadcrumb from "@/components/Breadcrumb";
 import { company, team } from "@/lib/contacts";
 
 export const metadata: Metadata = {
@@ -14,7 +15,14 @@ const teamImages: Record<string, string> = {
 
 export default function ContactsPage() {
   return (
-    <section className="px-6 py-20 sm:py-28">
+    <>
+      <Breadcrumb
+        items={[
+          { label: "Главная", href: "/" },
+          { label: "Контакты" },
+        ]}
+      />
+      <section className="px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <p className="text-sm uppercase tracking-widest text-neutral-500">
           Контакты
@@ -66,5 +74,6 @@ export default function ContactsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

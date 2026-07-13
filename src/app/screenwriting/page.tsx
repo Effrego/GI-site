@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumb from "@/components/Breadcrumb";
 import Screenwriting from "@/components/Screenwriting";
 
 export const metadata: Metadata = {
@@ -8,5 +9,15 @@ export const metadata: Metadata = {
 };
 
 export default function ScreenwritingPage() {
-  return <Screenwriting />;
+  return (
+    <>
+      <Breadcrumb
+        items={[
+          { label: "Главная", href: "/" },
+          { label: "GI Screenwriting" },
+        ]}
+      />
+      <Screenwriting />
+    </>
+  );
 }
