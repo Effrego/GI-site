@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -23,7 +23,15 @@ export default function Hero() {
           </div>
         </div>
 
-        <ImagePlaceholder ratio="portrait" label="Изображение" />
+        <div className="flex items-center justify-center">
+          <Image
+            src="/images/GI_logo.png"
+            alt="Guiding Idea"
+            width={300}
+            height={300}
+            className="w-full max-w-xs"
+          />
+        </div>
       </div>
     </section>
   );

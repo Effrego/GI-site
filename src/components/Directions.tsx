@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ImagePlaceholder from "./ImagePlaceholder";
+import Image from "next/image";
 
 const directions = [
   {
@@ -8,6 +8,7 @@ const directions = [
     description:
       "Авторская комната по созданию оригинальных сценариев для полнометражных фильмов, сериалов и театральных постановок.",
     href: "/screenwriting",
+    image: "/images/Octo-screenwriting.png",
   },
   {
     kicker: "«Лечение» сценариев",
@@ -15,6 +16,7 @@ const directions = [
     description:
       "Анализ, рекомендации, доработка или переработка сценария с помощью консультаций или редактуры от опытного сценариста.",
     href: "/doctoring",
+    image: "/images/Octo-doctoring.png",
   },
   {
     kicker: "Сценарный курс",
@@ -22,6 +24,7 @@ const directions = [
     description:
       "Специальная методика для начинающих и действующих авторов, направленная на последовательное освоение практических навыков сценарного мастерства.",
     href: "/courses",
+    image: "/images/Octo_courses.webp",
   },
 ];
 
@@ -35,7 +38,14 @@ export default function Directions() {
             href={direction.href}
             className="group flex flex-col rounded-lg border border-neutral-800 p-6 transition-colors hover:border-neutral-600"
           >
-            <ImagePlaceholder ratio="video" label="Изображение" />
+            <div className="relative h-48 w-full">
+              <Image
+                src={direction.image}
+                alt={direction.title}
+                fill
+                className="object-contain"
+              />
+            </div>
             <p className="mt-6 text-xs uppercase tracking-widest text-neutral-500">
               {direction.kicker}
             </p>
